@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Population of China</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <h1>Population of China</h1>
+      <div class="show-time"></div>
+      <script>
+        var t = null;
+        t = setTimeout(time, 1000); 
+        function time() {
+          clearTimeout(t); //
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); 
+          var m = dt.getMinutes(); 
+          var s = dt.getSeconds(); 
+          document.querySelector(".show-time").innerHTML =
+            "Current Time：" +
+            y +
+            "/" +
+            mt +
+            "/" +
+            day 
+          t = setTimeout(time, 1000); 
+        }
+      </script>
+    </header>
+
+    <!-- Whole Page -->
+    <section class="mainbox">
+      <!-- left Boxes -->
+      <div class="column">
+        <div class="panel bar">
+          <h2>Population Of Census (unit: 100000000persons)</h2>
+          
+          <div class="chart"></div>
+          
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line">
+          <h2>Population Change (unit: 10000persons)
+            <a class="a-active" href="javascript:;"></a>
+          </h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie">
+          <h2>Change from 2010 to 2020 (unit:10000persons)</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <!-- Middle Box -->
+      <div class="column">
+        <!-- Header -->
+        <div class="no">
+          <div class="no-hd">
+            <ul>
+              <li>662,620,000</li>
+              <li>696,600,000</li>
+            </ul>
+          </div>
+          <div class="no-bd">
+            <ul>
+              <li>Female</li>
+              <li>Male</li>
+            </ul>
+          </div>
+        </div>
+        <!-- map  -->
+
+        <div class="map">
+          <div  lass="map1"></div>
+          <div class="map2"></div>
+          <div class="map3"></div>
+          <div class="chart"></div>
+        </div>
+      </div>
+      <!-- right boxes -->
+      <div class="column">
+        <div class="panel bar2">
+          <h2>Proportion of Age Group to Population</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line2">
+          <h2>Education Attainment Per 100000 Persons</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie2">
+          <h2>Population of Regions(unit:10000persons)</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <!-- load china.js  -->
+    <script src="js/china.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
